@@ -10,23 +10,12 @@ npm run test
 
 # Architecture
 
-- Next.js 16, Hexagonal Architecture / DDD.
-- Frontend: `src/app/`. API routes: `src/app/api/`. Backend: `src/contexts/`.
-- Layers: Domain → Application (one use case per class) → Infrastructure.
-- DI: DIOD with `@Service()`, container at `src/contexts/shared/infrastructure/dependency-injection/diod.config.ts`.
-- API routes require `import "reflect-metadata"` at top
+Next.js 16, Hexagonal Architecture / DDD. Frontend in `src/app/`, API routes in `src/app/api/`, backend in `src/contexts/`.
 
-# DB
-- PostgreSQL + pgvector.
-- Embeddings `vector(1024)`.
+# Conventions
 
-# Testing
+Detailed conventions with examples live in `docs/`. **Do NOT read all docs upfront.** When working on a task:
 
-- Always use object mothers to instantiate aggregates in tests (`tests/contexts/*/domain/`)
-- Mock objects are implementations of domain interfaces (e.g. `MockEventBus` implements `EventBus`) in `tests/contexts/*/infrastructure/`
-
-# Code Style
-
-- `eslint-config-codely` preset
-- `explicit-function-return-type: error`
-- TypeScript strict mode with decorators
+1. Identify which area applies: `docs/backend/`, `docs/database/`, `docs/testing/`, or `docs/` root.
+2. Run `ls` only on that specific folder to discover relevant file names.
+3. Read only the docs whose name matches what you need.
