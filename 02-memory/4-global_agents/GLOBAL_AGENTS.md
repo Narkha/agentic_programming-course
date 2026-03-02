@@ -1,14 +1,11 @@
-# Guidelines
+# Rules
 
-- **Language:** English only for code, comments, docs, commits, configs, errors, tests
-- **Style:** Self-documenting code, NO comments to explain code
-- **Terms:** allowlist/blocklist, primary/replica (inclusive alternatives)
-- **Implementations:** Real implementations only, NO mocks in non-test code
+- Write all code, comments, docs, commits, and tests in English
+- Write self-documenting code — never add explanatory comments
+- Use inclusive terms: allowlist/blocklist, primary/replica
+- Never use mocks outside test files
 
-# Shell Tools
+# CLI
 
-- **Files:** `fd`, **Text:** `rg`, **Structure:** `tree`
-- **Code Analysis:** `ast-grep --lang ts/tsx/rust -p '<pattern>'`
-- **Processing:** `fzf`, `jq`, `yq`
-
-**Priority:** Use `ast-grep` over `rg`/`grep` unless plain-text search requested
+Use `ast-grep --lang <lang> -p '<pattern>'` for code search (prefer over `rg`/`grep`).
+Use `fd` for files, `rg` for text, `tree` for structure, `jq`/`yq` for data, `fzf` for filtering.
