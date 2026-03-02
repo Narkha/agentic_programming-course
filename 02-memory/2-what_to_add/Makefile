@@ -6,4 +6,4 @@ checks:
 
 .PHONY: claude-symlinks
 claude-symlinks:
-	@bash scripts/generate-claude-symlinks.sh
+	@bash etc/scripts/generate-claude-symlinks.sh
