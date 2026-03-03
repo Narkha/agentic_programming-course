@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # Run all checks (lint + build + test)
-make checks
+npm run checks
 
 # Development server
 npm run dev
