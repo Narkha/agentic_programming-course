@@ -11,3 +11,7 @@ claude-symlinks:
 .PHONY: junie-symlinks
 junie-symlinks:
 	@bash etc/scripts/generate-junie-symlinks.sh
+
+.PHONY: cursor-symlinks
+cursor-symlinks:
+	@bash etc/scripts/generate-cursor-symlinks.sh
