@@ -13,5 +13,4 @@ Instead of the following traditional commands, use faster alternatives:
 - `find` → `fd`
 - `grep` → `rg`
 - `tree` for structure
-- `jq` for data
-- `fzf` for filtering
+- `jq` and `yq` for data
