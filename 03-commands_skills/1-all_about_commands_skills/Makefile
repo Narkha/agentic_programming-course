@@ -7,3 +7,7 @@ checks:
 .PHONY: claude-symlinks
 claude-symlinks:
 	@bash etc/scripts/generate-claude-symlinks.sh
+
+.PHONY: junie-symlinks
+junie-symlinks:
+	@bash etc/scripts/generate-junie-symlinks.sh

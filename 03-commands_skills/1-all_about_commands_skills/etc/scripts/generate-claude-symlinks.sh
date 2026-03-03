@@ -3,9 +3,9 @@
 set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-base_dir="$(dirname "$script_dir")"
+project_dir="$(cd "$script_dir/../.." && pwd)"
 
-find "$base_dir" -name "AGENTS.md" -not -path "*/node_modules/*" | while read -r agents_file; do
+find "$project_dir" -name "AGENTS.md" -not -path "*/node_modules/*" | while read -r agents_file; do
   dir="$(dirname "$agents_file")"
   claude_file="$dir/CLAUDE.md"
 
@@ -17,3 +17,5 @@ find "$base_dir" -name "AGENTS.md" -not -path "*/node_modules/*" | while read -r
   ln -s "AGENTS.md" "$claude_file"
   echo "Created symlink $claude_file → AGENTS.md"
 done
+
+ln -sfn "../.agents/skills" "$project_dir/.claude/skills"
