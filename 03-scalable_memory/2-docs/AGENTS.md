@@ -10,11 +10,11 @@ npm run test
 
 # Architecture
 
-- Next.js 16, Hexagonal Architecture / DDD.
+- Next.js 16, Onion Architecture, DDD.
 - Frontend in `src/app/`, API routes in `src/app/api/`.
 - Backend in `src/contexts/`.
 
-# Conventions
+# Documentation
 
 - Detailed conventions with examples live in `docs/`.
 - **Do NOT read all docs upfront.**
