@@ -12,7 +12,6 @@ Based on the current conversation, create new or improve existing documentation 
    - If it exists, improve it while preserving the required structure.
    - If it does not exist, create a new file in the appropriate subfolder.
 3. Read `docs/documentation-guidelines.md` and follow its structure exactly. Every document MUST include these sections in order:
-
 ```
 # 🎯 Name of the convention
 
@@ -24,6 +23,7 @@ Based on the current conversation, create new or improve existing documentation 
 ```
 
 4. Ask the user to confirm the target file path before writing.
+5. Update the AGENTS.md index with the new doc.
 
 ## Rules
 
