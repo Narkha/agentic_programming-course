@@ -1,73 +1,84 @@
-# 🎯 Documentation Standard
+# 🎯 Documentation guidelines
+
+## Structure
+
+Each documentation file follows this template:
+
+```markdown
+# 🎯 [Category]: [Title]
 
 ## 💡 Convention
 
-Every project convention must be documented as a standalone Markdown file inside the `docs/` folder, organized by area (`backend/`, `frontend/`, `database/`). Each document follows a fixed structure with these sections in order: Convention, Benefits, Examples (good and bad), Real world examples, and Related agreements.
-
-The goal is to provide AI agents and developers with self-contained, discoverable references that require no extra context to understand.
+[Convention summary - 1-2 sentences explaining the rule.]
 
 ## 🏆 Benefits
 
-- AI agents can consume individual docs without loading the entire knowledge base, reducing token usage.
-- New team members find conventions faster through a browsable folder structure.
-- Each doc is independently reviewable in PRs, making convention changes easy to track.
-- The fixed structure ensures consistency and completeness across all documented conventions.
+- [Benefit 1.]
+- [Benefit 2.]
+- [Benefit 3.]
 
 ## 👀 Examples
 
-### ✅ Good: Well-structured convention document
+### ✅ Good: [Brief description of the good practice]
 
-```markdown
-# 🎯 Name of the convention
+[Code block or description.]
 
-## 💡 Convention
+### ❌ Bad: [Brief description of the bad practice]
 
-Convention description.
-
-## 🏆 Benefits
-
-- List of why to use this convention.
-
-## 👀 Examples
-
-### ✅ Good: Definition of a good example
-
-good example
-
-### ❌ Bad: Definition of a bad example
-
-bad example
+[Code block or description.]
 
 ## 🧐 Real world examples
 
-- Links to files following this convention
+- [`Component/File Name`](./path/to/file.tsx)
+- [`Another Component`](./path/to/another/file.ts)
+
+## ☝️ Exceptional cases: When to not take into account this convention
+
+[List of cases where exceptions are valid.]
+
+### 🥽 Example of exceptional case
+
+[Description of the exceptional case context.]
+
+[Code block or description showing the valid exception.]
 
 ## 🔗 Related agreements
 
-- Links to agreements related to this convention if applies
+- [Related agreement title](./path-to-related-agreement.md).
+- [Another related agreement](./path-to-another-agreement.md).
 ```
 
-### ❌ Bad: Convention buried in a monolithic file
+## Title and file name
 
-```markdown
-# Project Guidelines
+The filename is critical: AI agents use it to decide whether to load the document or not. A descriptive filename ensures the convention is discovered and applied; a vague one means it will be ignored.
 
-## Architecture
-We use hexagonal architecture...
+Use kebab-case for the filename, derived from the title. Reflect in the title and filename the actual convention instead of the generic category or concept. That is, if the convention is about "Frontend and backend communication", the title should be "Frontend and Backend Communication via Use Cases" instead of "Frontend and Backend Communication", and the filename should be "frontend-backend-communication-via-use-cases.md" instead of "frontend-and-backend-communication.md".
 
-## Testing
-Use object mothers...
+Examples:
 
-## Database
-PostgreSQL with pgvector...
-```
+- "Frontend and backend communication via use cases" → `frontend-backend-communication-via-use-cases.md`.
+- "Use NOT NULL in fields" → `not-null-fields.md`.
+- "Avoid premature abstractions" → `avoid-premature-abstractions.md`.
+- "React hooks organization" → `react-hooks-organization.md`.
 
-## 🧐 Real world examples
+## Good and bad examples
 
-- [Hexagonal Architecture convention](backend/hexagonal-architecture.md)
-- [Object Mothers convention](testing/object-mothers.md)
-- [PostgreSQL with pgvector convention](database/postgresql-pgvector.md)
+- Use H4 (`####`) sub-headings only when there are multiple examples within a good or bad section.
+- Use the appropriate code language in fenced code blocks.
+- Avoid code comments in the example snippets. Provide a brief description between the heading and the code block only if really necessary. It is important to keep the examples as brief as possible, so try to avoid adding a description if you can already express the idea in the example heading.
 
-## 🔗 Related agreements
+## Optional sections
 
-- All docs inside `docs/` must follow this standard
+- If the convention doesn't have exceptional cases, omit the "Exceptional cases" section entirely.
+- If there are no real world examples, omit the "Real world examples" section entirely.
+- If there are no related agreements, omit the "Related agreements" section entirely.
+
+## Style
+
+- Maximize information density: convey as much as possible in as few words as possible.
+- End each phrase with a period, including bullet point items.
+- Avoid documenting with the whole phrase in strong emphasis.
+
+## Reference example
+
+See [`docs/sql-database/not-null-fields.md`](sql-database/not-null-fields.md) as a complete example of correctly structured documentation.
