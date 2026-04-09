@@ -1,0 +1,3 @@
+chatgpt.com/backend-api/codex/responses
+
+websockets tab
